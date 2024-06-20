@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './cartPage.css';
 import { useCart } from '../hooks/useCart';
-import Title from './components/Title/Title';
+import Title from '../components/Title/Title';
 
 export default function CartPage () {
-    const {cart} = useCart();
+    const {cart, removeFromCart, changeQuantity} = useCart();
     return (
         <><Title title="Cart Page" margin="1.5rem 0 0 2.5rem" />
         {cart && cart.items.length > 0 &&
@@ -20,7 +20,7 @@ export default function CartPage () {
 
 
                     <div>
-                        <select value={item.quantity} >
+                        <select value={item.quantity} onChange={() => changeQuantity(item, Number(e.target.value))} >
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -39,7 +39,7 @@ export default function CartPage () {
                     </div>
 
                     <div>
-                        <button className={classes.remove_button}>
+                        <button className={classes.remove_button} onClick={() => removeFromCart(item.food.id)}>
                             Deletar
                         </button>
                     </div>

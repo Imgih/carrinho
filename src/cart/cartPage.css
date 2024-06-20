@@ -74,4 +74,50 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    flex: 1 3;
+    height: 20rem;
+    border: 1 solid #ffbbbb;
+    border-radius: 1rem;
+    padding: 0.5;
+    margin: 0.5rem;
+}
+
+.checkout > div{
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+    align-items: flex-start ;
+}
+
+.checkout .foods_count{
+    margin-bottom: 1.5rem;
+}
+
+.checkout .foods_count::before{
+    content: "Count: ";
+    color: grey;
+}
+
+.checkout .total_price::before{
+    content: 'Preço: ';
+    color: grey;
+}
+
+.checkout a{
+    padding: 1rem;
+    color: white;
+    background: #e72929;
+    display: block;
+    width: 99%;
+    border-radius: 1rem;
+    text-align: center ;
+    justify-self: center;
+}
+
+.checkout a:hover{
+    opacity: 0.8;
+    cursor: pointer;
 }
